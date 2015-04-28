@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tramping Applicaiton</title>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="d3/d3.js" charset="utf-8"></script>
+
+  </head>
+  <header>
+    <h1> Tramping Guide </h1>
+  </header>
+ 
+<body>
+  <section>
+    <a href="selectTrack.html">
+      <div id="plan">
+     <h1>Plan</h1>
+        <h2> Plan out your journey. </h2>
+      </div>
+    </a>
+    <a href="main.html">
+      <div id="walk">
+     <h1>Walk</h1>
+        <h2> Engage on a leisurely stroll. </h2>
+      </div>
+    </a>
+</section>
+
+  <script>
+//RECTANGLES
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+var jsonRectangles = [
+   { "x_axis": 300, "y_axis": 5, "height": 30, "width":30, "color" : "#46912b" },
+   { "x_axis": 350, "y_axis": 5, "height": 30, "width":30, "color" : "#2b915b" },
+   { "x_axis": 400, "y_axis": 5, "height": 30, "width":30, "color" : "#79912b" }];
+ 
+ //set the max x and y variables
+ var max_x = 0;
+ var max_y = 0;
+ 
+ //for every element in the json blob
+ for (var i = 0; i < jsonRectangles.length; i++) {
+  var temp_x, temp_y;
+  var temp_x = jsonRectangles[i].x_axis + jsonRectangles[i].width;  //assign the value of each x axis to temp (as well as adding on the width - don't forget this)
+  var temp_y = jsonRectangles[i].y_axis + jsonRectangles[i].height;
+
+  if ( temp_x >= max_x ) { max_x = temp_x; }  //if the temp is greater, reassign the max var
+  if ( temp_y >= max_y ) { max_y = temp_y; }
+}
+
+var svgContainer = d3.select("header").append("svg")
+                                    .attr("width", max_x)  //make the container the max width of the dataset
+                                    .attr("height", max_y)
+
+var rectangles = svgContainer.selectAll("rect")
+                             .data(jsonRectangles)
+                             .enter()
+                             .append("rect");
+
+var rectangleAttributes = rectangles
+                          .attr("y", '-200')    //put them way before the view port
+                          .transition()
+                          .duration(2000)
+                          .delay(function(d, i) {return i * 500 })  //makes them come down one at a time
+                          .attr("y", "500")
+                          .attr("x", function (d) { return d.x_axis; })
+                          .attr("y", function (d) { return d.y_axis; })
+                          .attr("height", function (d) { return d.height; })
+                          .attr("width", function (d) { return d.width; })
+                          .style("fill", function(d) { return d.color; });
+                         
+  </script>
+</body>
+</html>

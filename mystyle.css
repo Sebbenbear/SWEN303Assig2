@@ -1,0 +1,170 @@
+  /*General*/
+
+ header {
+    background-color: #1c8d51;
+    color:white;
+    text-align:center;
+}
+
+ body {
+    background-color: #272B30;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  
+  position: relative;
+    background-image: url("http://i.imgur.com/H2DyL2n.jpg");
+  background-size: 100%;
+  }
+
+h1 {
+opacity:1;
+    color: white;
+    margin-left: 40px;
+    font-size: 40pt;
+    font-weight: 400;
+}
+
+h2 {
+color: white;
+    margin-left: 40px;
+    font-size: 20pt;
+}
+
+section {
+font-color: gray;
+    float:center;
+}
+
+p {
+color: white;
+    margin-left: 40px;
+    font-size: 15pt;
+}
+
+ /*General End*/
+#plan {
+text-align: right;
+float:left;
+width: 40%;
+opacity: 0.6;
+}
+#plan:hover {
+    opacity: 1;
+}
+#walk {
+text-align: left;
+float:right;
+width: 40%;
+opacity: 0.6;
+}
+#walk:hover {
+    opacity: 1;
+}
+/* Area Chart */
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: white;
+  shape-rendering: crispEdges;
+}
+/* Area Chart End */
+
+/* Line Chart Part */
+
+.bar {
+  fill: #1c8d51;
+}
+
+.bar:hover {
+  fill: orange;
+
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+/* Line Chart Part */
+
+/*Main CSS layout */
+
+#topRow > div {         /* > means it affects all it's children objects */
+float:left;
+width: 33%;
+height: 300px;
+}
+
+#bottomRow > div {
+float:left;
+height: 200px;
+width: 33%;
+}
+
+/*Select Track */
+#leftSide > div {         /* > means it affects all it's children objects */
+float:right;
+width: 40%;
+height: 300px;
+}
+
+#RightSide > div {
+float:left;
+height: 300px;
+width: 40%;
+}
+/* Navigation and Settings */
+
+ul#menu {  
+    padding: 0;  
+    margin-bottom: 11px;
+}
+
+ul#menu li {
+    display: inline;  /* spreads the tabs horizontally across */
+    margin-right: 3px;  /* how far apart the tabs are from each other */
+}
+
+ul#menu li a {
+    background-color: #ffffff; /* tabs background color */
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #1c8d51;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer; cursor: hand;
+}
+
+ul#menu li a:hover {
+    color: white;
+    background-color: #1c8d51;
+    cursor: pointer; cursor: hand;
+
+}
+
+/* Navigation and Settings End*/
+
+#bottomRow > div:first-child {
+width: 66%;
+    font-color: white;
+}
+
+.stat {
+font-size: 40pt;
+color: white;
+}
+
+#tracks {
+
+}
